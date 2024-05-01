@@ -1,8 +1,8 @@
-import Navbar from "./content/Navbar"
+import Navbar from "./content/navbar"
 
 function App() {
   return (
-    <div className="app">
+    <div className="app bg-primary-100">
       <Navbar />
     </div>
   )
