@@ -1,5 +1,11 @@
+import Navbar from "./content/Navbar"
+
 function App() {
-  return <div className="app">ZZ Pizza</div>
+  return (
+    <div className="app">
+      <Navbar />
+    </div>
+  )
 }
 
 export default App
