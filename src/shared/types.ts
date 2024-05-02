@@ -1,4 +1,4 @@
-export enum selectedPage {
+export enum SelectedPage {
   ZZ = "zz",
   Meny = "meny",
   Bord = "bord",
