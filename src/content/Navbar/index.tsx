@@ -1,4 +1,4 @@
-import { Bars3BottomRightIcon } from "@heroicons/react/24/solid"
+import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid"
 import useMediaQuery from "../../hooks/useMediaQuery"
 import { SelectedPage } from "../../shared/types"
 import { useState } from "react"
@@ -36,15 +36,35 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               </div>
             ) : (
               <button
-                className="rounded-full bg-secondary-500 p-2"
+                className="rounded-full bg-primary-100 p-2"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
-                <Bars3BottomRightIcon className="h-6 w-6 text-white" />
+                <Bars3BottomRightIcon className="h-6 w-6 hover:text-white transition duration-500" />
               </button>
             )}
           </div>
         </div>
       </div>
+
+      {/* MOBILE MENU MODAL */}
+      {!isAboveSmallScreens && isMenuToggled && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[200px] bg-primary-200 drop-shadow-xl">
+          {/* CLOSE ICON */}
+          <div className="flex justify-end p-12">
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <XMarkIcon className="h-6 w-6 hover:text-white transition duration-500" />
+            </button>
+          </div>
+
+          {/* MENU ITEMS */}
+          <div className="ml-[33%] flex flex-col gap-10 text-1xl">
+            {/* <Link page="ZZ" selectedPage={selectedPage} setSelectedPage={setSelectedPage} /> */}
+            <Link page="Meny" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="Bord" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+            <Link page="Om Oss" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
