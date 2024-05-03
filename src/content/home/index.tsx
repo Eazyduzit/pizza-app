@@ -5,6 +5,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import zzP from "../../assets/zzP.jpeg"
 
 import { motion } from "framer-motion"
+import SocialMediaIcons from "../../shared/SocialMediaIcons"
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void
@@ -13,7 +14,7 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
   return (
-    <section id="hjem" className="gap-16 bg-gray-20 py-10 h-full sm:pb-0">
+    <section id="hjem" className="gap-16 bg-primary-100 py-10 h-full sm:pb-0">
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
         className="sm:flex mx-auto w-5/6 items-center justify-center sm:h-5/6"
@@ -37,8 +38,8 @@ const Home = ({ setSelectedPage }: Props) => {
               </div>
             </div>
             <p className="mt-8 text-sm">
-              Unrivaled Gym. Unparalleled Training Fitness Classes. World Class Studios to get the
-              Body Shapes That you Dream of.. Get Your Dream Body Now.
+              Pizza i mesterklasse! Kom innom vårt kjøkken i gamlebyen.. Sitt inne i våre rustikke
+              industri lokaler, eller sitt ute og nyt været med en god pizza på uteserveringen.
             </p>
           </motion.div>
           {/* ACTIONS */}
@@ -53,10 +54,10 @@ const Home = ({ setSelectedPage }: Props) => {
             {/* <ActionButton setSelectedPage={setSelectedPage}>Join Now</ActionButton> */}
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-              onClick={() => setSelectedPage(SelectedPage.Hjem)}
-              href={`#${SelectedPage.Hjem}`}
+              onClick={() => setSelectedPage(SelectedPage.OmOss)}
+              href={`#${SelectedPage.OmOss}`}
             >
-              <p>Learn More</p>
+              <p>Om Oss</p>
             </AnchorLink>
           </motion.div>
         </div>
@@ -67,12 +68,10 @@ const Home = ({ setSelectedPage }: Props) => {
       </motion.div>
       {/* SPONSORS */}
       {isAboveSmallScreens && (
-        <div className="h-[150px] w-full bg-primary-200 py-10">
-          <div className="mx-auto w-5/6">
-            <div className="flex w-3/5 items-center justify-between gap-8">
-              <img src={zzP} alt="redbull-sponsor" />
-              <img src={zzP} alt="forbes-sponsor" />
-              <img src={zzP} alt="fortune-sponsor" />
+        <div className="h-[150px] w-full bg-primary-200 py-8">
+          <div className="mx-auto w-2/6">
+            <div className="flex w-3/5 items-center justify-between">
+              <SocialMediaIcons />
             </div>
           </div>
         </div>
