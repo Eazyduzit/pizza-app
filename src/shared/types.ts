@@ -1,5 +1,5 @@
 export enum SelectedPage {
-  ZZ = "zz",
+  Hjem = "hjem",
   Meny = "meny",
   Bord = "bord",
   OmOss = "omoss",
